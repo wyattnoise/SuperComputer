@@ -1,0 +1,64 @@
+{
+  "name": "@wyattnoise/supercompute",
+  "version": "1.0.0",
+  "description": "SuperCompute — A decentralized AI inference network powered by people, not data centers. Earn USDC by sharing your GPU. Use AI privately without censorship or account gates.",
+  "keywords": ["decentralized-ai", "distributed-computing", "gpu-sharing", "webgpu", "solana", "inference", "ai-network"],
+  "author": "SuperCompute Team",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "dev:server": "tsx watch server/index.ts",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:server\"",
+    "build": "bash scripts/build.sh",
+    "build:raw": "next build",
+    "start": "next start",
+    "start:server": "tsx server/index.ts",
+    "start:keeper": "tsx scripts/keeper.ts",
+    "start:worker": "node worker/dist/index.js",
+    "lint": "eslint . --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:seed": "tsx scripts/seed-db.ts",
+    "db:backup": "tsx scripts/backup-db.ts"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
+    "@solana/web3.js": "^2.0.0",
+    "@solana/spl-token": "^0.4.14",
+    "@coral-xyz/anchor": "^0.32.1",
+    "@pump-fun/pump-swap-sdk": "^1.17.0",
+    "@privy-io/react-auth": "^3.11.0",
+    "@privy-io/server-auth": "^1.32.5",
+    "better-sqlite3": "^11.0.0",
+    "bs58": "^6.0.0",
+    "commander": "^12.1.0",
+    "concurrently": "^9.0.0",
+    "typescript": "^5.6.0",
+    "zustand": "^5.0.0",
+    "tailwindcss": "^4.0.0",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.500.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/better-sqlite3": "^7.6.0",
+    "eslint": "^9.0.0",
+    "postcss": "^8.4.0",
+    "vitest": "^3.0.0",
+    "tsx": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
+
