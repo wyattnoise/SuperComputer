@@ -1,0 +1,10 @@
+[General]
+build_input = ["package-lock.json", ".env.local.example", "next.config.ts", "tsconfig.json"]
+providers = ["node"]
+node_version = "20"
+
+[Start]
+start = "npm run start:all"
+start_server = "npm run start:server"
+
+
