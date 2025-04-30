@@ -1,0 +1,17 @@
+cluster:
+  nodes: 5
+  strategy: score_based
+  heartbeat_interval: 5
+
+logging:
+  level: INFO
+  format: json
+  file: null
+
+api:
+  host: 127.0.0.1
+  port: 8080
+  enabled: true
+
+
+

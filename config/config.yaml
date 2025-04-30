@@ -1,0 +1,30 @@
+# SuperCompute Network — Configuration
+# Edit this file to customize cluster behaviour.
+
+cluster:
+  nodes: 5
+  strategy: score_based               # round_robin | random | least_loaded | score_based
+  heartbeat_interval: 5               # seconds between node heartbeats
+  scheduler_interval: 0.5             # seconds between scheduling cycles
+  retry:
+    max_retries: 3
+    retry_delay: 1.0                  # base delay before retry (seconds)
+
+logging:
+  level: INFO                         # DEBUG | INFO | WARNING | ERROR
+  format: json                        # json | text
+  output_file: null                   # null = stdout only, or path to log file
+
+api:
+  host: 127.0.0.1
+  port: 8080
+  enabled: true
+
+observability:
+  metrics_enabled: true
+  metrics_interval: 10                # seconds between metric snapshots
+
+queue:
+  maxsize: 0                          # 0 = unlimited
+  default_priority: 1                 # 0=low, 1=normal, 2=high, 3=critical
+
