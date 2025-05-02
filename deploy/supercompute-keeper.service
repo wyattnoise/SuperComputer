@@ -1,0 +1,16 @@
+[Unit]
+Description=SuperCompute Keeper — token buyback/burn + staker rewards
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env tsx /opt/supercompute/scripts/keeper.ts
+WorkingDirectory=/opt/supercompute
+Environment=NODE_ENV=production
+User=supercompute
+Group=supercompute
+
+[Install]
+WantedBy=multi-user.target
+
+

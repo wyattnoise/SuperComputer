@@ -1,0 +1,11 @@
+[Unit]
+Description=SuperCompute Database Backup
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env tsx /opt/supercompute/scripts/backup-db.ts
+WorkingDirectory=/opt/supercompute
+User=supercompute
+Group=supercompute
+

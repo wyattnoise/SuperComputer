@@ -1,0 +1,13 @@
+[Unit]
+Description=SuperCompute Daily Database Backup Timer
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+
+
+
+
