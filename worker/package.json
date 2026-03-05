@@ -1,0 +1,41 @@
+{
+  "name": "@wyattnoise/supercompute-worker",
+  "version": "1.0.0",
+  "description": "SuperCompute Worker — Contribute your GPU to the SuperCompute decentralized AI network. Earn USDC for every inference you serve.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "supercompute-worker": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "benchmark": "tsx src/benchmark.ts"
+  },
+  "keywords": ["decentralized-ai", "gpu", "inference", "ollama", "webgpu", "distributed-computing"],
+  "dependencies": {
+    "commander": "^12.1.0",
+    "socket.io-client": "^4.7.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": ["dist", "README.md"],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wyattnoise/SuperCompute-Network.git"
+  }
+}
+
+
+
