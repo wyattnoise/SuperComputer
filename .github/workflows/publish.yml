@@ -45,7 +45,6 @@ jobs:
           npm publish --registry=https://npm.pkg.github.com
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_CONFIG_USERCONFIG: /dev/null
 
   python-publish:
     name: Build & Upload Python Package
