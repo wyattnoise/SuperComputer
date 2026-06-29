@@ -4,7 +4,6 @@ SuperCompute is an open-source project. Everyone who contributes — whether cod
 
 ## Core Team
 
-- **wyattnoise** — Creator & Lead Developer
 - *Your name here* — Open a PR!
 
 ## How to Contribute
