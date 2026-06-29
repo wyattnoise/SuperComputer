@@ -1,8 +1,16 @@
 {
   "name": "@wyattnoise/supercompute",
-  "version": "1.0.0",
-  "description": "SuperCompute — A decentralized AI inference network powered by people, not data centers. Earn USDC by sharing your GPU. Use AI privately without censorship or account gates.",
-  "keywords": ["decentralized-ai", "distributed-computing", "gpu-sharing", "webgpu", "solana", "inference", "ai-network"],
+  "version": "1.0.1",
+  "description": "SuperCompute \u2014 A decentralized AI inference network powered by people, not data centers. Earn USDC by sharing your GPU. Use AI privately without censorship or account gates.",
+  "keywords": [
+    "decentralized-ai",
+    "distributed-computing",
+    "gpu-sharing",
+    "webgpu",
+    "solana",
+    "inference",
+    "ai-network"
+  ],
   "author": "SuperCompute Team",
   "license": "MIT",
   "type": "module",
@@ -61,4 +69,3 @@
     "registry": "https://npm.pkg.github.com"
   }
 }
-

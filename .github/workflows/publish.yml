@@ -32,25 +32,20 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@wyattnoise'
 
-      - name: Update version (workflow_dispatch)
-        if: github.event_name == 'workflow_dispatch'
+      - name: Update version
         run: |
-          VERSION="${{ github.event.inputs.version }}"
-          npm version "$VERSION" --no-git-tag-version
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-
-      - name: Use release version
-        if: github.event_name == 'release'
-        run: |
-          VERSION="${{ github.event.release.tag_name }}"
+          VERSION="${{ github.event.inputs.version || github.event.release.tag_name }}"
           VERSION="${VERSION#v}"
-          npm version "$VERSION" --no-git-tag-version
+          echo "Publishing version: $VERSION"
+          npm version "$VERSION" --no-git-tag-version --allow-same-version
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Publish to GitHub Packages
-        run: npm publish
+        run: |
+          npm publish --registry=https://npm.pkg.github.com
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_CONFIG_USERCONFIG: /dev/null
 
   python-publish:
     name: Build & Upload Python Package
@@ -75,8 +70,7 @@ jobs:
           python -m pip install --upgrade pip build twine
 
       - name: Build package
-        run: |
-          python -m build
+        run: python -m build
 
       - name: Upload to release assets
         if: github.event_name == 'release'
