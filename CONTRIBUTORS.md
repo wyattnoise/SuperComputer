@@ -2,10 +2,6 @@
 
 SuperCompute is an open-source project. Everyone who contributes — whether code, documentation, ideas, or running a worker — helps build a truly decentralized AI future.
 
-## Core Team
-
-- *Your name here* — Open a PR!
-
 ## How to Contribute
 
 1. Fork the repository
