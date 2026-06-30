@@ -3,7 +3,6 @@
 
 // ── Token & Chain ──
 
-// The token token mint address. Set at launch. pump.fun mints use 6 decimals.
 export const TOKEN_DECIMALS = 6;
 export function getTokenMint(): string | null {
   const m = process.env.TOKEN_MINT?.trim();
@@ -26,7 +25,7 @@ function pct(key: string, fallback: number): number {
 export const COMPUTE_MARGIN_TO_POOL = pct('SC_COMPUTE_MARGIN_POOL', 1.0);
 // Of trading fees, how much goes to buyback pool (rest = team)
 export const TRADING_FEE_TO_POOL = pct('SC_TRADING_FEE_POOL', 0.35);
-// Of the pool, how much buys+burns token (rest = staker USDC rewards)
+// Of the pool, how much goes to buyback (rest = staker USDC rewards)
 export const POOL_BURN_SPLIT = pct('SC_POOL_BURN_SPLIT', 0.5);
 
 // ── Worker Economics ──

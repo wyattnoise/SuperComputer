@@ -1,9 +1,9 @@
-// SuperCompute Tokenomics — token buyback, burn, staking, and revenue distribution
+// SuperCompute Keeper — Treasury fee collection, token buyback, and reward distribution
 //
 // Money Flow:
 //   compute margin → 100% buyback pool
 //   trading fees   → 35% buyback pool, 65% team
-//   buyback pool   → 50/50: half buys+burns token, half pays stakers USDC
+//   buyback pool   → 50/50: half buyback, half staker USDC rewards
 //
 // All accounting is done in USDC (6 decimals on Solana).
 
@@ -74,7 +74,7 @@ export async function claimCreatorFees(): Promise<{ amount: number; tx?: string 
   }
 }
 
-// ── Buyback token ──
+// ── Buyback Token ──
 
 export async function buyTokenWithUsdc(usdcAmount: number): Promise<{ amount: number; tx?: string }> {
   if (isDryRun()) {
@@ -110,9 +110,9 @@ export async function buyTokenWithUsdc(usdcAmount: number): Promise<{ amount: nu
   }
 }
 
-// ── Burn token ──
+// ── Burn Token ──
 
-export async function burnSuper(amount: number): Promise<{ tx?: string }> {
+export async function burnToken(amount: number): Promise<{ tx?: string }> {
   if (isDryRun()) {
     console.log(`[Keeper:dry-run] Would burn ${amount} token`);
     return {};
@@ -231,7 +231,7 @@ export async function runKeeper(): Promise<KeeperRun> {
           
           // Step 4: Burn
           if (buy.amount > 0) {
-            const burn = await burnSuper(buy.amount);
+            const burn = await burnToken(buy.amount);
             run.burnAmount = buy.amount;
             run.txBurn = burn.tx;
           }

@@ -27,8 +27,8 @@ async function main(): Promise<void> {
   console.log(`  Duration:       ${elapsed}s`);
   console.log(`  Dry Run:        ${run.dryRun ? 'Yes' : 'No'}`);
   console.log(`  Fees Claimed:   ${run.feesClaimed.toFixed(4)} USDC`);
-  console.log(`  Buyback:        ${run.buybackAmount.toFixed(4)} token`);
-  console.log(`  Burn:           ${run.burnAmount.toFixed(4)} token`);
+  console.log(`  Buyback:        ${run.buybackAmount.toFixed(4)} tokens`);
+  console.log(`  Burn:           ${run.burnAmount.toFixed(4)} tokens`);
   console.log(`  Staker Rewards: ${run.stakerRewards.toFixed(4)} USDC`);
 
   if (run.txClaim) console.log(`  Tx (Claim):     ${run.txClaim}`);

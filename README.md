@@ -7,7 +7,7 @@
 |---|---|
 | 🌐 **Network** | Decentralized GPU compute for AI inference |
 | ⚡ **Protocol** | Solana + WebSocket real-time streaming |
-| 💰 **Incentive** | Earn USDC / token by sharing your GPU |
+| 💰 **Incentive** | Earn USDC by sharing your GPU |
 | 🔐 **Privacy** | Self-custodial wallet auth via Privy |
 | 🧩 **Stack** | Next.js 16 · Python 3.10+ · Rust (Anchor) · WebGPU |
 
@@ -19,7 +19,7 @@
 - **Private AI Chat** — Run LLMs, image gen, and audio models without account gates
 - **Real‑time Streaming** — Server‑sent events & WebSocket for low‑latency inference
 - **Censorship‑Resistant** — No prompt filters, no content moderation, no data logging
-- **Pay‑per‑Use** — Pay in SOL, USDC, or token tokens with micro‑transactions
+- **Pay‑per‑Use** — Pay in SOL or USDC with micro‑transactions
 
 ### ⛏️ For Miners (GPU Providers)
 - **One‑Click Node** — Run a SuperCompute worker and start earning immediately
@@ -28,9 +28,7 @@
 - **Performance Dashboard** — Real‑time earnings, uptime, and utilization metrics
 
 ### 🏛️ Protocol Layer
-- **Solana Smart Contracts** — On‑chain task escrow, staking, and reward distribution
-- **token Token** — Governance, staking, and fee discount token with deflationary mechanics
-- **Priority Queue** — Stake more token to skip the line during peak demand
+- **Solana Smart Contracts** — On‑chain task escrow and reward distribution
 - **Decentralized Treasury** — Community‑governed protocol fees and miner subsidies
 
 ---
@@ -62,7 +60,6 @@ supercompute/
 │   ├── api/v1/             # REST API routes
 │   ├── chat/               # AI chat interface
 │   ├── earn/               # Miner dashboard
-│   ├── staking/            # token staking UI
 │   └── treasury/           # Protocol treasury
 ├── server/                 # Node.js API server
 │   ├── index.ts            # HTTP + WebSocket server
@@ -164,7 +161,7 @@ All configuration is managed through `.env.local` (see [`.env.local.example`](.e
 | `SC_HOST` | Bind address | `0.0.0.0` |
 | `SOLANA_RPC_URL` | Solana JSON‑RPC endpoint | `https://api.mainnet‑beta.solana.com` |
 | `SOLANA_RPC_WS_URL` | Solana WebSocket endpoint | `wss://api.mainnet‑beta.solana.com` |
-| `TOKEN_MINT` | token SPL token mint address | — |
+| `TOKEN_MINT` | SPL token mint address | — |
 | `NEXT_PUBLIC_PRIVY_APP_ID` | Privy authentication App ID | — |
 | `PRIVY_APP_SECRET` | Privy application secret | — |
 
@@ -207,18 +204,6 @@ npm run start:server   # API + WebSocket
 
 ---
 
-## 🪙 Tokenomics
-
-| Metric | Value |
-|---|---|
-| **Token** | token (SPL) |
-| **Total Supply** | 1,000,000,000 token |
-| **Mining Reward** | 40% of supply emitted over 5 years |
-| **Staking Yield** | ~15% APY (dynamic) |
-| **Fee Discount** | 50% discount when paying with token |
-
----
-
 ## 🤝 Contributing
 
 See [CONTRIBUTORS.md](CONTRIBUTORS.md) for guidelines.  
@@ -231,8 +216,7 @@ Join the conversation — issues, PRs, and protocol proposals are all welcome.
 | v0.1 | Core task scheduler + queue | ✅ Complete |
 | v0.2 | P2P networking & RPC layer | ✅ Complete |
 | v0.3 | Web app & API server | ✅ Complete |
-| v0.4 | token token & staking | 🚧 In Progress |
-| v0.5 | GPU worker agent | 🚧 In Progress |
+| v0.4 | GPU worker agent | 🚧 In Progress |
 | v1.0 | Mainnet launch | ⏳ Planned |
 
 ---
