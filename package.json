@@ -1,7 +1,7 @@
 {
   "name": "@wyattnoise/supercompute",
-  "version": "1.0.2",
-  "description": "SuperCompute \u2014 A decentralized AI inference network powered by people, not data centers. Earn USDC by sharing your GPU. Use AI privately without censorship or account gates.",
+  "version": "1.0.3",
+  "description": "SuperCompute — High-performance distributed computing framework for AI inference at scale.",
   "keywords": [
     "decentralized-ai",
     "distributed-computing",
